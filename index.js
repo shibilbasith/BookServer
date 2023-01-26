@@ -24,7 +24,7 @@ app.use(express.json());
 
 //using cors specify origin to the server
 app.use(cors({
-    origin:'http://localhost:4200'
+    origin:'https://bookserver-rbqi.onrender.com'
 }))
 
 const dataService = require('./services/dataService')
