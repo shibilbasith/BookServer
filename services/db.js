@@ -2,12 +2,24 @@
 
 const mongoose = require('mongoose')
 
+const dbUrl = "mongodb+srv://shibil:i7YBoOi8JWgVfy0I@cluster0.u5aebd5.mongodb.net/library?retryWrites=true&w=majority"
+mongoose.set('strictQuery', false);
+
+async function connect() {
+    try {
+        await mongoose.connect(dbUrl);
+        console.log("Connected to MongoDB");
+    } catch (error) {
+        console.error(error);
+    }
+  }
+  connect(); 
 
 // define connection string
 
-mongoose.connect('mongodb://localhost:27017/library',()=>{
-    console.log("connected to mongoDB")
-})
+// mongoose.connect(DB_URI,()=>{
+//     console.log("connected to mongoDB")
+// })
 
 // create model to store all products 
 

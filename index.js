@@ -1,5 +1,7 @@
 //server creation
 
+const port = process.env.PORT || 3000;
+
 //1 import express
 const express = require('express');
 
@@ -13,7 +15,7 @@ const app = express();
 
 //3 set up port number
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Express server listening on port 3000');
 })
 
