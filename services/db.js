@@ -3,11 +3,14 @@
 const mongoose = require('mongoose')
 
 const dbUrl = "mongodb+srv://shibil:i7YBoOi8JWgVfy0I@cluster0.u5aebd5.mongodb.net/library?retryWrites=true&w=majority"
+// const dbUrl = process.env.dbUrl
 mongoose.set('strictQuery', false);
 
 async function connect() {
     try {
-        await mongoose.connect(dbUrl);
+        await mongoose.connect(dbUrl,()=>{
+            console.log("connected to mongoDB")
+        });
         console.log("Connected to MongoDB");
     } catch (error) {
         console.error(error);
