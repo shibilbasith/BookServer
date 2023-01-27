@@ -1,5 +1,5 @@
-//server creation
-const port = process.env.PORT || 3000;
+
+require('dotenv').config();
 
 //1 import express
 const express = require('express');
@@ -11,6 +11,9 @@ const cors = require('cors');
 //2 using express create an app
 
 const app = express();
+
+//server creation
+const port = process.env.DATABASE || 3000;
 
 //3 set up port number
 

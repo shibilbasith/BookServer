@@ -2,7 +2,9 @@
 
 const mongoose = require('mongoose')
 
-const dbUrl = "mongodb+srv://shibil:i7YBoOi8JWgVfy0I@cluster0.u5aebd5.mongodb.net/library?retryWrites=true&w=majority"
+require('dotenv').config();
+const dbUrl = process.env.DATABASE || 3000;
+
 // const dbUrl = process.env.dbUrl
 mongoose.set('strictQuery', false);
 
