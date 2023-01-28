@@ -5,25 +5,9 @@ const mongoose = require('mongoose')
 
 // define connection string
 
-require('dotenv').config();
-const dbUrl = process.env.DATABASE || 3000;
-
-// const dbUrl = "mongodb+srv://shibil:i7YBoOi8JWgVfy0I@cluster0.u5aebd5.mongodb.net/library?retryWrites=true&w=majority"
-
-
-mongoose.set('strictQuery', false);
-
-async function connect() {
-    try {
-        await mongoose.connect(dbUrl,()=>{
-            console.log("connected to mongoDB")
-        });
-        console.log("Connected to MongoDB");
-    } catch (error) {
-        console.error(error);
-    }
-  }
-  connect(); 
+mongoose.connect('mongodb://localhost:27017/library',()=>{
+    console.log("connected to mongoDB")
+})
 
 // create model to store all products 
 

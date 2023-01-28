@@ -11,13 +11,9 @@ const cors = require('cors');
 
 const app = express();
 
-require('dotenv').config();
-
-const port = process.env.PORT || 3000;
-
 //3 set up port number
 
-app.listen(port,()=>{
+app.listen(3000,()=>{
     console.log('Express server listening on port 3000');
 })
 
@@ -26,7 +22,7 @@ app.use(express.json());
 
 //using cors specify origin to the server
 app.use(cors({
-    origin: ['http://localhost:4200', 'https://bookserver-rbqi.onrender.com']
+    origin:'http://localhost:4200'
 }))
 
 const dataService = require('./services/dataService')
